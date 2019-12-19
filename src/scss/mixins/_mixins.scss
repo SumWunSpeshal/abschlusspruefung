@@ -1,0 +1,30 @@
+// Hover with Underline for anchors
+@mixin hover-underline($color) {
+	position: relative;
+
+	&:after {
+		content: '';
+
+		position: absolute;
+		bottom: -3px;
+		left: 50%;
+		transform: translateX(-50%);
+
+		height: 2px;
+		width: 0;
+		border-radius: 2px;
+
+		background: $color;
+
+		transition: width .2s ease;
+	}
+
+	&.is-active,
+	&:hover {
+
+		&:after {
+
+			width: 1rem;
+		}
+	}
+}

@@ -1,0 +1,32 @@
+.button {
+	@include fs-small;
+	position: relative;
+	z-index: 1;
+
+	display: inline-block;
+	border-radius: 1rem;
+	background: $secondary-color;
+	overflow: hidden;
+
+	padding: .5rem 2rem;
+
+	text-transform: uppercase;
+	color: $white;
+	font-weight: $fw-bold;
+	text-decoration: none;
+
+	// button inner
+	span {
+
+		display: inline-block;
+	}
+
+	&:hover {
+
+		span {
+			animation-name: jump-up-a-little;
+			animation-duration: .4s;
+			animation-iteration-count: 1;
+		}
+	}
+}

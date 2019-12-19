@@ -1,0 +1,69 @@
+body {
+	position: relative;
+	font-family: $f-normal;
+
+	padding-top: 5.75rem;
+
+	@include breakpoint(large) {
+		padding-top: 0;
+	}
+
+	&.hide-overflow {
+
+		height: 100vh;
+		overflow: hidden;
+	}
+}
+
+::-moz-selection {
+	background: $primary-color;
+}
+
+::selection {
+	background: $primary-color;
+}
+
+p {
+	@include fs-medium;
+	margin: 0 0 $sp-small;
+	color: $ap-brown;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+p,
+span {
+
+	&.bold,
+	.bold {
+		font-weight: $fw-bold;
+	}
+
+	&.uppercase,
+	.uppercase {
+		text-transform: uppercase;
+	}
+}
+
+button {
+
+	cursor: pointer;
+	outline: none;
+}
+
+.base-space {
+	margin-bottom: 3rem;
+
+	@include breakpoint(large) {
+		margin-bottom: $sp-large;
+	}
+}
+
+.page-wrap {
+	margin: $sp-small $sp-small 0;
+	border-radius: $round;
+	background-color: $ap-beige;
+	overflow: hidden;
+}

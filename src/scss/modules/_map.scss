@@ -1,0 +1,76 @@
+.map {
+
+	&__svg {
+
+		display: block;
+		margin: 0 auto 2.5rem;
+
+		@media screen and(max-width: 1024px) {
+
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	&__link {
+		position: relative;
+
+		&:hover {
+
+			path {
+				transition: fill .2s ease;
+
+				&:first-child {
+
+					fill: $primary-color;
+				}
+			}
+		}
+	}
+
+	//&__legend {
+	//
+	//}
+
+	&__legend-list {
+		@include fs-small;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+
+		color: $ap-brown;
+	}
+
+	&__legend-item {
+		display: flex;
+		align-items: center;
+
+		flex: 0 0 50%;
+		margin-bottom: 1rem;
+
+		@include breakpoint(medium) {
+
+			flex: 0 0 33.3333%;
+		}
+
+		@media screen and (min-width: 640px) {
+
+			flex: 0 0 25%;
+		}
+
+		@include breakpoint(large) {
+
+			flex: 0 0 20%;
+		}
+
+		&:last-child {
+
+			margin-right: auto;
+		}
+
+		img {
+
+			margin-right: .5rem;
+		}
+	}
+}

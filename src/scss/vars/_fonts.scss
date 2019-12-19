@@ -1,0 +1,37 @@
+// Font Families
+$f-headline: 'Sue Ellen Francisco', cursive;
+$f-normal: 'Roboto', sans-serif;
+
+// Font Weights
+$fw-normal: 400;
+$fw-bold: 700;
+
+@mixin fs-small {
+	font-size: 12px;
+	line-height: 16px;
+}
+
+@mixin fs-medium {
+	font-size: 15px;
+	line-height: 24px;
+}
+
+@mixin fs-main-nav {
+	font-size: 16px;
+	line-height: 24px;
+}
+
+@mixin fs-headline-small {
+	font-size: 22px;
+	line-height: 24px;
+}
+
+@mixin fs-headline-medium {
+	font-size: 36px;
+	line-height: 48px;
+}
+
+@mixin fs-headline-large {
+	font-size: 44px;
+	line-height: 64px;
+}

@@ -1,0 +1,180 @@
+// Local Variables
+$slide-height: 24.5rem;
+$translucent: rgba($ap-brown, .8);
+
+.modal {
+
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	background: $translucent;
+	opacity: 0;
+	visibility: hidden;
+
+	transition: opacity .2s ease, visibility .2s ease;
+
+	// states
+	&.is-closed {
+
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	&.is-opened {
+
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.slider-wrap {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+}
+
+.slider {
+
+	.slick-list {
+
+		margin-right: -$sp-small;
+		margin-left: -$sp-small;
+	}
+
+	.slick-slide {
+
+		margin-right: $sp-small;
+		margin-left: $sp-small;
+	}
+
+	// slick modifications
+	.slick-arrow {
+		position: absolute;
+		z-index: 50;
+		top: 50%;
+
+		width: 3rem;
+		height: 3rem;
+		border-radius: 50%;
+
+		background: $primary-color;
+
+		white-space: nowrap;
+		text-indent: 100%;
+		overflow: hidden;
+
+		opacity: 1;
+		visibility: visible;
+
+		transition: background .2s ease, opacity .2s ease, visibility .2s ease;
+
+		&:after {
+			content: '';
+			background: url('../img/icons/arrow-down-white.svg') no-repeat center center;
+			background-size: 1.5rem auto;
+
+			width: 100%;
+			height: 100%;
+
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		&.slick-disabled {
+
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+
+	.slick-prev {
+		transform: translate(-50%, -50%);
+		left: 0;
+
+		&:after {
+			transform: translate(-50%, -50%) rotate(90deg);
+		}
+
+		&:hover {
+
+			&:after {
+				animation-name: jump-left;
+				animation-duration: .4s;
+				animation-iteration-count: 1;
+			}
+		}
+	}
+
+	.slick-next {
+		transform: translate(50%, -50%);
+		right: 0;
+
+		&:after {
+			transform: translate(-50%, -50%) rotate(-90deg);
+		}
+
+		&:hover {
+
+			&:after {
+				animation-name: jump-right;
+				animation-duration: .4s;
+				animation-iteration-count: 1;
+			}
+		}
+	}
+}
+
+.slide {
+	position: relative;
+
+	height: auto;
+	width: 100%;
+	border-radius: $round;
+	padding: 2rem 0;
+
+	background: $white;
+
+	@include breakpoint(large) {
+
+		padding: 0;
+		height: $slide-height;
+	}
+
+	&__inner {
+
+		display: flex;
+		align-items: center;
+		height: 100%;
+	}
+
+	&__close {
+
+		position: absolute;
+		top: 1.5rem;
+		right: 2rem;
+
+		&:hover {
+
+			animation-name: jump-up;
+			animation-duration: .4s;
+			animation-iteration-count: 1;
+		}
+	}
+
+	img {
+
+		margin: 0 auto $sp-medium;
+
+		@include breakpoint(large) {
+
+			margin: 0;
+		}
+	}
+}

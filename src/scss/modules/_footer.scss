@@ -1,0 +1,116 @@
+// Local Variables
+$lower-height: 3.875rem;
+
+.footer {
+	padding-top: 3rem;
+
+	@include breakpoint(large) {
+		padding-top: $sp-large;
+	}
+
+	&__upper {
+		text-align: center;
+
+		&__inner {
+			margin-bottom: $sp-lmedium;
+
+			&:last-child {
+
+				margin-bottom: 0;
+			}
+
+			@include breakpoint(large) {
+
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__lower {
+		margin: 0 1rem;
+		width: calc(100% - 2rem);
+		height: auto;
+
+		color: $white;
+		background: $secondary-color;
+		padding: $sp-medium 0;
+		border-radius: $round $round 0 0;
+
+		@include breakpoint(large) {
+
+			padding: 0;
+			height: $lower-height;
+		}
+
+		&__headline {
+			display: inline-block;
+			margin-bottom: 0;
+			margin-right: .5rem;
+			transform: translateY(3px);
+		}
+
+		&__marginalia {
+			display: inline-block;
+
+			a {
+				@extend %a;
+				color: $white;
+			}
+		}
+
+		&__grid {
+			display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			justify-content: flex-start;
+			align-items: center;
+
+			height: 100%;
+
+			@include breakpoint(large) {
+
+				justify-content: space-between;
+				flex-direction: row;
+			}
+		}
+
+		&__left {
+			@include fs-small;
+			text-align: center;
+			margin-bottom: $sp-small;
+
+			@include breakpoint(large) {
+
+				margin-bottom: 0;
+				text-align: left;
+			}
+		}
+
+		//&__right {
+		//
+		//}
+	}
+
+	//&__nav {
+	//
+	//}
+	//
+	&__nav-list {
+		display: flex;
+		flex-wrap: nowrap;
+	}
+
+	&__nav-item {
+		margin-left: $sp-medium;
+	}
+
+	&__nav-link {
+
+		@include hover-underline($white);
+		@include fs-small;
+		color: $white;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: $fw-bold;
+	}
+}

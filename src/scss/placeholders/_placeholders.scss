@@ -1,0 +1,29 @@
+%ul {
+	@include fs-medium;
+	list-style-type: disc;
+	list-style-position: outside;
+	padding-left: 1.25rem;
+	margin: 0 0 $sp-small;
+
+	color: $primary-color;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	// always use with ul to normalize font color
+	span,
+	.revert-color {
+
+		color: $ap-brown;
+	}
+}
+
+%a {
+	color: $ap-brown;
+	text-decoration: underline;
+
+	&:hover {
+		text-decoration: none;
+	}
+}

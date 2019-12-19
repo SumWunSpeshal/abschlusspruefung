@@ -1,0 +1,238 @@
+// Local Variables
+
+.header {
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	width: calc(100% - 2rem);
+	background-color: transparent;
+	margin: 0 $sp-small $sp-small;
+	border-radius: 0 0 $round $round;
+
+	// states
+	&.scrolled {
+		background-color: $white;
+	}
+
+	&__inner {
+		position: relative;
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		align-items: flex-start;
+
+		padding-top: 4rem;
+		padding-bottom: 0;
+
+		transition: padding .2s ease;
+
+		.scrolled & {
+
+			padding-top: $sp-medium;
+			padding-bottom: $sp-medium;
+		}
+	}
+
+	&__logo-link {
+		display: block;
+	}
+
+	&__logo-wrap {
+		position: relative;
+	}
+
+	&__logo {
+
+		&--text {
+			width: auto;
+			transition: height .2s ease;
+
+			.scrolled & {
+
+				height: 54px;
+			}
+
+			path {
+				fill: $white;
+				transition: fill .2s ease;
+
+				.scrolled & {
+					fill: $ap-brown;
+				}
+			}
+		}
+
+		&--image {
+			position: absolute;
+			top: 100%;
+			left: 100%;
+
+			opacity: 1;
+			visibility: visible;
+
+			transform: translate(-33px, -35px) scale(1);
+			transition: transform .2s ease, opacity .2s ease, visibility .2s ease;
+
+			.scrolled & {
+
+				visibility: hidden;
+				opacity: 0;
+
+				transform: translate(-50%, -50%) scale(0);
+			}
+
+			path {
+				fill: $white;
+			}
+		}
+	}
+
+	&__nav {
+		position: absolute;
+		right: 1rem;
+		top: 4rem;
+		transform: translateY(0);
+
+		transition: top .2s ease, transform .2s ease;
+
+		.scrolled & {
+
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		// mobile header
+
+		&--mobile {
+
+			position: fixed;
+			z-index: 3000;
+			top: 0;
+			bottom: 0;
+			left: -100%;
+			width: 100%;
+
+			visibility: hidden;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			background: $white;
+
+			transition: left .2s ease, visibility .2s ease;
+
+			// states
+			&.is-open {
+
+				visibility: visible;
+				left: 0;
+			}
+
+			.mobile-close {
+
+				position: absolute;
+				top: 1.5rem;
+				right: 2rem;
+
+				&:hover {
+
+					animation-name: jump-up;
+					animation-duration: .4s;
+					animation-iteration-count: 1;
+				}
+			}
+
+			ul {
+				flex-wrap: wrap;
+				margin-bottom: 3rem;
+
+				li {
+
+					flex: 0 0 100%;
+					margin-left: 0;
+					margin-bottom: $sp-small;
+					text-align: center;
+
+					&:last-child {
+
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+
+	&__nav-list {
+
+		display: flex;
+	}
+
+	&__nav-item {
+		margin-left: $sp-medium;
+
+		&:first-child {
+
+			margin-left: 0;
+		}
+	}
+
+	&__nav-link {
+		@include hover-underline($white);
+		@include fs-main-nav;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: $fw-bold;
+		color: $white;
+
+		transition: color .2s ease;
+
+		.scrolled & {
+
+			color: $ap-brown;
+
+			&:after {
+
+				background: $ap-brown;
+			}
+		}
+	}
+
+	&__burger {
+		@include fs-medium;
+
+		display: flex;
+		align-items: center;
+
+		color: $ap-brown;
+		font-weight: $fw-bold;
+
+		svg {
+			width: 1.25rem;
+			margin-left: $sp-xsmall;
+
+			path {
+				fill: $ap-brown;
+			}
+		}
+
+		&:hover {
+
+			span {
+
+				display: block;
+				animation-name: jump-up-a-little;
+				animation-duration: .4s;
+				animation-iteration-count: 1;
+			}
+		}
+	}
+
+	&__social {
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}

@@ -1,0 +1,31 @@
+.text-only {
+	position: relative;
+
+	&__split {
+
+		@include breakpoint(medium) {
+
+			column-count: 2;
+			column-gap: 2rem;
+		}
+	}
+
+	ul {
+		@extend %ul;
+	}
+
+	a {
+		@extend %a;
+	}
+
+	// illustrations
+	&__illu {
+		position: absolute;
+
+		&--bee {
+
+			bottom: calc(100% - 7rem);
+			right: 0;
+		}
+	}
+}

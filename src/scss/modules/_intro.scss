@@ -1,0 +1,35 @@
+.intro {
+	position: relative;
+	padding-bottom: 2rem;
+
+	&__image {
+		width: 100%;
+	}
+
+	&__scroll {
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		transform: translate(-50%, -100%);
+
+		width: 4rem;
+		height: 4rem;
+
+		border-radius: 50%;
+
+		background-color: $white;
+
+		cursor: pointer;
+
+		// states
+		&:hover {
+
+			svg {
+
+				animation-name: jump-down;
+				animation-duration: .4s;
+				animation-iteration-count: 1;
+			}
+		}
+	}
+}

@@ -1,0 +1,67 @@
+.text {
+
+	&--s {
+		@include fs-small;
+	}
+
+	&--m {
+		@include fs-medium;
+	}
+}
+
+.headline {
+	display: block;
+	font-family: $f-headline;
+	text-transform: uppercase;
+	color: $secondary-color;
+	letter-spacing: 4px;
+	margin-bottom: 1rem;
+
+	&--s {
+
+		@include fs-headline-small;
+	}
+
+	&--m {
+		font-size: rem-calc(24);
+		line-height: inherit;
+
+		@include breakpoint(medium) {
+			@include fs-headline-medium;
+		}
+	}
+
+	&--l {
+		font-size: rem-calc(28);
+		line-height: inherit;
+
+		@include breakpoint(medium) {
+
+			@include fs-headline-large;
+		}
+	}
+
+	// color alternatives
+	&--white {
+
+		color: $white;
+	}
+
+	svg {
+
+		display: block;
+		margin-top: $sp-small;
+	}
+
+	// justifiers
+
+	&--center {
+		text-align: center;
+
+		svg {
+
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+}
