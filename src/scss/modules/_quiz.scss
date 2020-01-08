@@ -1,0 +1,105 @@
+// Local Variables
+$quiz-slide-height: 26.5rem;
+
+.form-wrap {
+
+	@include fs-medium;
+	margin: 0 0 $sp-small;
+	color: $ap-brown;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	input {
+		display: none;
+
+		// states
+		&:checked + label:before {
+
+			background: $secondary-color;
+		}
+	}
+
+	label {
+		position: relative;
+
+		padding-left: 1.5rem;
+
+		// pseudo radio
+		&:before {
+			content: '';
+
+			position: absolute;
+			left: 0;
+			top: 2px;
+
+			border: 2px solid $secondary-color;
+			background: transparent;
+			border-radius: 50%;
+
+			width: 1rem;
+			height: 1rem;
+
+		}
+	}
+}
+
+.quiz-modal {
+
+	.slide {
+		display: none;
+
+		height: $quiz-slide-height;
+
+		// states
+		&.is-active {
+			display: block;
+		}
+	}
+
+	button {
+
+		margin-right: $sp-xsmall;
+		margin-top: $sp-small;
+
+		&:last-child {
+
+			margin-right: 0;
+		}
+	}
+}
+
+.quiz {
+
+	&__actions {
+
+		p {
+			font-weight: $fw-bold;
+		}
+
+		button {
+
+			display: none;
+
+			// states
+			&.is-active {
+
+				display: inline-block;
+			}
+		}
+	}
+}
+
+.button-wrap {
+
+	button {
+
+		margin-right: .5rem;
+
+		&:last-child {
+
+			margin-right: 0;
+		}
+	}
+}

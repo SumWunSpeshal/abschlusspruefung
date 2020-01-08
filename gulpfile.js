@@ -77,7 +77,6 @@ gulp.task('styles', ['sassLint'], function () {
 gulp.task('scripts', function() {
 	gulp.src('src/js/*.js')
 	    .pipe(concat('build.min.js'))
-	    .pipe(uglify())
 	    .pipe(gulp.dest('htdocs/js'));
 });
 

@@ -4155,6 +4155,10 @@ button {
   outline: none;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .base-space {
   margin-bottom: 3rem;
 }
@@ -4415,6 +4419,13 @@ button {
   animation-duration: .4s;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
+}
+
+.button--secondary {
+  background: transparent;
+  color: #7A8727;
+  border: 2px solid #7A8727;
+  padding: 6px 30px;
 }
 
 .header {
@@ -5228,6 +5239,80 @@ button {
   .slide img {
     margin: 0;
   }
+}
+
+.form-wrap {
+  font-size: 15px;
+  line-height: 24px;
+  margin: 0 0 1rem;
+  color: #402710;
+}
+
+.form-wrap:last-child {
+  margin-bottom: 0;
+}
+
+.form-wrap input {
+  display: none;
+}
+
+.form-wrap input:checked + label:before {
+  background: #7A8727;
+}
+
+.form-wrap label {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.form-wrap label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  border: 2px solid #7A8727;
+  background: transparent;
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+}
+
+.quiz-modal .slide {
+  display: none;
+  height: 26.5rem;
+}
+
+.quiz-modal .slide.is-active {
+  display: block;
+}
+
+.quiz-modal button {
+  margin-right: 0.5rem;
+  margin-top: 1rem;
+}
+
+.quiz-modal button:last-child {
+  margin-right: 0;
+}
+
+.quiz__actions p {
+  font-weight: 700;
+}
+
+.quiz__actions button {
+  display: none;
+}
+
+.quiz__actions button.is-active {
+  display: inline-block;
+}
+
+.button-wrap button {
+  margin-right: .5rem;
+}
+
+.button-wrap button:last-child {
+  margin-right: 0;
 }
 
 .footer {

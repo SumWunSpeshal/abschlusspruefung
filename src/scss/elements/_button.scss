@@ -29,4 +29,14 @@
 			animation-iteration-count: 1;
 		}
 	}
+
+	// modifiers
+	&--secondary {
+
+		background: transparent;
+		color: $secondary-color;
+		border: 2px solid $secondary-color;
+
+		padding: 6px 30px;
+	}
 }
